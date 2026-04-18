@@ -1,0 +1,2 @@
+# chatwork_to_discord
+railwayでwebhookサーバーを立ててchatwork apiとflaskを使用し、メッセージを送信します

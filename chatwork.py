@@ -207,6 +207,21 @@ class setup:
         }
         response = requests.put(url, data=payload, headers=headers)
         print(response.text)
+    def get_account_name(self):
+        url = f"https://api.chatwork.com/v2/rooms/{self.room_id}/messages?force=0"
+
+        headers = {
+        "accept": "application/json",
+        "x-chatworktoken": self.api_token
+            }
+
+        response = requests.get(url, headers=headers)
+        if response.status_code == 204:
+            print("何もないお")
+            return None
+        messages = response.json()
+        account_name = messages[-1]["account"]["name"]
+        return account_name
     def get_new_messages(self):
         url = f"https://api.chatwork.com/v2/rooms/{self.room_id}/messages"
         headers = {"x-chatworktoken": self.api_token}

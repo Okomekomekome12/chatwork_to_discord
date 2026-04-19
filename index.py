@@ -16,7 +16,7 @@ SECRET_TOKEN = None #シークレットトークンなしで（
 
 DISCORD_CHANNEL_ID = 191945450721  # 転送先チャンネルID
 bot_account_id = 11156582
-CHATWORK_ROOM_ID = int(os.getenv("chatwork_room_id", "114514"))
+CHATWORK_ROOM_ID = os.getenv("chatwork_room_id")
 
 cw = chatwork.setup(CHATWORK_ROOM_ID, API_TOKEN)
 
